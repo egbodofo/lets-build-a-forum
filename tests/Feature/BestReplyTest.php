@@ -46,8 +46,6 @@ class BestReplyTest extends TestCase
     /** @test */
     function if_a_best_reply_is_deleted_then_the_thread_is_properly_updated_to_reflect_that()
     {
-        // DB::statement('PRAGMA foreign_keys=on');
-
         $this->signIn();
 
         $reply = create('App\Reply', ['user_id' => auth()->id()]); // this creates a thread behind the scence for this reply

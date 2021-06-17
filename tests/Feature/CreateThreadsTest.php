@@ -150,16 +150,6 @@ class CreateThreadsTest extends TestCase
         $this->assertDatabaseMissing('replies', ['id' => $reply->id]);
 
         $this->assertEquals(0, Activity::count());
-
-        //OR $this->assertDatabaseMissing('activities', [
-        //     'subject_id' => $thread->id,
-        //     'subject_type' => get_class($thread)
-        // ]);
-
-        // $this->assertDatabaseMissing('activities', [
-        //     'subject_id' => $reply->id,
-        //     'subject_type' => get_class($reply)
-        // ]);
     }
 
     public function publishThread($overrides = [])

@@ -31,7 +31,6 @@ class RepliesController extends Controller
         ]);
 
         return $reply->load('owner');
-        // return back()->with('flash', 'Your reply has been left!');
     }
 
     public function update(Reply $reply)
@@ -41,7 +40,6 @@ class RepliesController extends Controller
         request()->validate(['body' => 'required|spamfree']);
 
         $reply->update(request(['body']));
-        // OR $reply->update(['body' => request('body')]);
     }
 
     public function destroy(Reply $reply)
